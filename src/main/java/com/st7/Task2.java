@@ -1,5 +1,6 @@
 package com.st7;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.openqa.selenium.By;
@@ -10,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class Task2 {
 
     public static void printMyIp() {
-        System.setProperty("webdriver.chrome.driver", "путь_к_драйверу/chromedriver");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         try {
             driver.get("https://api.ipify.org/?format=json");

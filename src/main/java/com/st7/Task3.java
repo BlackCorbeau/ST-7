@@ -1,5 +1,6 @@
 package com.st7;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Task3 {
 
     public static void printForecastAndSave() {
-        System.setProperty("webdriver.chrome.driver", "путь_к_драйверу/chromedriver");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         PrintWriter fileWriter = null;
         try {
